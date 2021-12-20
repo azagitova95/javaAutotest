@@ -21,5 +21,24 @@ dependencies {
 
 	implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.0'
 	implementation group: 'org.testng', name: 'testng', version: '7.4.0'
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+	implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
 
 }
+
+
+test {
+
+	useTestNG() {
+	
+		 useDefaultListeners = true
+		 suites('testng.xml')	
+	}
+	
+	testLogging {
+	
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+   
+}
+

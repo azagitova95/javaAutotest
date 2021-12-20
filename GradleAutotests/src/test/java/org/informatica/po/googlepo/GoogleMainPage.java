@@ -1,5 +1,7 @@
 package org.informatica.po.googlepo;
 
+import static org.testng.Assert.assertNotNull;
+
 import java.util.List;
 
 import org.openqa.selenium.Keys;
@@ -35,25 +37,27 @@ public class GoogleMainPage {
 		Reporter.log("Text entered in Search Box: " + arg, true);
 	}
 	
-	public void SwitchToImages() {
+	public void SwitchToImagesTab() {
 		image_tab.click();
 		Reporter.log("Switched to the Images Tab", true);	
 	}
 	
-	public void DisplayNoOfImages() {
-	System.out.println("No. of Images: " + listImages.size());
+	public void VerifyTheSearchIsNotEmpty() {
+	//System.out.println("No. of Images: " + listImages.size());
+	assertNotNull(listImages.size());
+	Reporter.log("The search result is not empty. Number of found results: " + listImages.size(), true);
 	}
 	
 	//Business method
 	public void SearchAProduct(String arg) {
 		SetSearchTextBox(arg);
-		SwitchToImages();
-		DisplayNoOfImages();
+		SwitchToImagesTab();
+		VerifyTheSearchIsNotEmpty();
 		
 		//String actual = driver.getTitle();
 		//String expected = "Catalog :: Search results";
 		//Assert.assertEquals(actual, expected, "Application is not able to search product: " + arg);
-		Reporter.log("Able to Search for thr Product Successfully. Product: " + arg, true);
+		Reporter.log("Able to Search for the Images Successfully. Search text: " + arg, true);
 	}
 	
 

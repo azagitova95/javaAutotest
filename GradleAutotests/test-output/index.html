@@ -56,7 +56,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="org.informatica.tc.GoogleSearchTC" hash-for-method="GoogleSearchImageTest">GoogleSearchImageTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="org.informatica.tc.GoogleSearchTC" hash-for-method="GoogleSearchImageTest(19 of May)">GoogleSearchImageTest(19 of May)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="org.informatica.tc.GoogleSearchTC" hash-for-method="GoogleSearchImageTest(12 of May)">GoogleSearchImageTest(12 of May)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -127,9 +132,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="GoogleSearchImageTest">
-                  </a> <!-- GoogleSearchImageTest -->
+                  <a name="GoogleSearchImageTest(19 of May)">
+                  </a> <!-- GoogleSearchImageTest(19 of May) -->
                   <span class="method-name">GoogleSearchImageTest</span>
+                  <span class="parameters">(19 of May)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="GoogleSearchImageTest(12 of May)">
+                  </a> <!-- GoogleSearchImageTest(12 of May) -->
+                  <span class="method-name">GoogleSearchImageTest</span>
+                  <span class="parameters">(12 of May)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,13 +158,22 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
-  &lt;parameter name=&quot;url&quot; value=&quot;https://yandex.ru&quot;/&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;TestOnCoogle&quot;&gt;
+    &lt;parameter name=&quot;searchText&quot; value=&quot;19 of May&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://google.com&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;org.informatica.tc.GoogleSearchTC&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- TestOnCoogle --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;TestOnYandex&quot;&gt;
+    &lt;parameter name=&quot;searchText&quot; value=&quot;12 of May&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://yandex.ru&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;org.informatica.tc.GoogleSearchTC&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- TestOnYandex --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -162,7 +185,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">TestOnCoogle (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">TestOnYandex (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -188,16 +214,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'GoogleSearchImageTest')
 data.setCell(0, 2, 'org.informatica.tc.GoogleSearchTC')
-data.setCell(0, 3, 25575);
+data.setCell(0, 3, 5564);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'GoogleSearchImageTest')
+data.setCell(1, 2, 'org.informatica.tc.GoogleSearchTC')
+data.setCell(1, 3, 5107);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 25 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -209,11 +239,21 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">GoogleSearchImageTest</span>
+              <span class="reporter-method-name">GoogleSearchImageTest(19 of May)</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">Text entered in Search Box: 19 of May</span>
                 <span class="reporter-method-output">Switched to the Images Tab</span>
-                <span class="reporter-method-output">Able to Search for thr Product Successfully. Product: 19 of May</span>
+                <span class="reporter-method-output">The search result is not empty. Number of found results: 41</span>
+                <span class="reporter-method-output">Able to Search for the Images Successfully. Search text: 19 of May</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">GoogleSearchImageTest(12 of May)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Text entered in Search Box: 12 of May</span>
+                <span class="reporter-method-output">Switched to the Images Tab</span>
+                <span class="reporter-method-output">The search result is not empty. Number of found results: 132</span>
+                <span class="reporter-method-output">Able to Search for thr Product Successfully. Product: 12 of May</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -233,16 +273,28 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">org.informatica.tc.GoogleSearchTC</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">setUpDriver(chrome, https://yandex.ru)</span>
+                <span class="method-name">setUpDriver(firefox, https://google.com)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">GoogleSearchImageTest</span>
-                <span class="method-start">12280 ms</span>
+                <span class="method-name">GoogleSearchImageTest(19 of May)</span>
+                <span class="method-start">21305 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">teaarDown</span>
-                <span class="method-start">37865 ms</span>
+                <span class="method-name">closeTheBrowser</span>
+                <span class="method-start">26449 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-test before">
+                <span class="method-name">setUpDriver(chrome, https://yandex.ru)</span>
+                <span class="method-start">30320 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">GoogleSearchImageTest(12 of May)</span>
+                <span class="method-start">45380 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">closeTheBrowser</span>
+                <span class="method-start">50948 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

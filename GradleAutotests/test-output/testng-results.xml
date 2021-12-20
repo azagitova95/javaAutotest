@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[Navigated to the Browser: chromeURL: https://yandex.ru]]>
+      <![CDATA[Navigated to the Browser: firefoxURL: https://google.com]]>
     </line>
     <line>
       <![CDATA[Text entered in Search Box: 19 of May]]>
@@ -11,15 +11,83 @@
       <![CDATA[Switched to the Images Tab]]>
     </line>
     <line>
-      <![CDATA[Able to Search for thr Product Successfully. Product: 19 of May]]>
+      <![CDATA[The search result is not empty. Number of found results: 41]]>
+    </line>
+    <line>
+      <![CDATA[Able to Search for the Images Successfully. Search text: 19 of May]]>
+    </line>
+    <line>
+      <![CDATA[Navigated to the Browser: chromeURL: https://yandex.ru]]>
+    </line>
+    <line>
+      <![CDATA[Text entered in Search Box: 12 of May]]>
+    </line>
+    <line>
+      <![CDATA[Switched to the Images Tab]]>
+    </line>
+    <line>
+      <![CDATA[The search result is not empty. Number of found results: 132]]>
+    </line>
+    <line>
+      <![CDATA[Able to Search for thr Product Successfully. Product: 12 of May]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="38737" started-at="2021-12-19T11:31:35 PST" finished-at="2021-12-19T11:32:14 PST">
+  <suite name="Suite" duration-ms="52600" started-at="2021-12-20T23:26:33 MSK" finished-at="2021-12-20T23:27:26 MSK">
     <groups>
     </groups>
-    <test name="Test" duration-ms="38737" started-at="2021-12-19T11:31:35 PST" finished-at="2021-12-19T11:32:14 PST">
+    <test name="TestOnCoogle" duration-ms="30153" started-at="2021-12-20T23:26:33 MSK" finished-at="2021-12-20T23:27:03 MSK">
       <class name="org.informatica.tc.GoogleSearchTC">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String,java.lang.String)[pri:0, instance:org.informatica.tc.GoogleSearchTC@69b0fd6f]" name="setUpDriver" is-config="true" duration-ms="12244" started-at="2021-12-19T11:31:35 PST" finished-at="2021-12-19T11:31:47 PST">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String,java.lang.String)[pri:0, instance:org.informatica.tc.GoogleSearchTC@4a87761d]" name="setUpDriver" is-config="true" duration-ms="21259" started-at="2021-12-20T23:26:33 MSK" finished-at="2021-12-20T23:26:54 MSK">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://google.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Navigated to the Browser: firefoxURL: https://google.com]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method status="PASS" signature="GoogleSearchImageTest(java.lang.String)[pri:0, instance:org.informatica.tc.GoogleSearchTC@4a87761d]" name="GoogleSearchImageTest" duration-ms="5107" started-at="2021-12-20T23:26:54 MSK" finished-at="2021-12-20T23:26:59 MSK">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[19 of May]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Text entered in Search Box: 19 of May]]>
+            </line>
+            <line>
+              <![CDATA[Switched to the Images Tab]]>
+            </line>
+            <line>
+              <![CDATA[The search result is not empty. Number of found results: 41]]>
+            </line>
+            <line>
+              <![CDATA[Able to Search for the Images Successfully. Search text: 19 of May]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GoogleSearchImageTest -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:org.informatica.tc.GoogleSearchTC@4a87761d]" name="closeTheBrowser" is-config="true" duration-ms="3695" started-at="2021-12-20T23:26:59 MSK" finished-at="2021-12-20T23:27:03 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTheBrowser -->
+      </class> <!-- org.informatica.tc.GoogleSearchTC -->
+    </test> <!-- TestOnCoogle -->
+    <test name="TestOnYandex" duration-ms="22274" started-at="2021-12-20T23:27:03 MSK" finished-at="2021-12-20T23:27:26 MSK">
+      <class name="org.informatica.tc.GoogleSearchTC">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String,java.lang.String)[pri:0, instance:org.informatica.tc.GoogleSearchTC@704d6e83]" name="setUpDriver" is-config="true" duration-ms="15058" started-at="2021-12-20T23:27:03 MSK" finished-at="2021-12-20T23:27:18 MSK">
           <params>
             <param index="0">
               <value>
@@ -38,24 +106,34 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="GoogleSearchImageTest()[pri:0, instance:org.informatica.tc.GoogleSearchTC@69b0fd6f]" name="GoogleSearchImageTest" duration-ms="25575" started-at="2021-12-19T11:31:47 PST" finished-at="2021-12-19T11:32:13 PST">
+        <test-method status="PASS" signature="GoogleSearchImageTest(java.lang.String)[pri:0, instance:org.informatica.tc.GoogleSearchTC@704d6e83]" name="GoogleSearchImageTest" duration-ms="5564" started-at="2021-12-20T23:27:18 MSK" finished-at="2021-12-20T23:27:24 MSK">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12 of May]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
             <line>
-              <![CDATA[Text entered in Search Box: 19 of May]]>
+              <![CDATA[Text entered in Search Box: 12 of May]]>
             </line>
             <line>
               <![CDATA[Switched to the Images Tab]]>
             </line>
             <line>
-              <![CDATA[Able to Search for thr Product Successfully. Product: 19 of May]]>
+              <![CDATA[The search result is not empty. Number of found results: 132]]>
+            </line>
+            <line>
+              <![CDATA[Able to Search for thr Product Successfully. Product: 12 of May]]>
             </line>
           </reporter-output>
         </test-method> <!-- GoogleSearchImageTest -->
-        <test-method status="PASS" signature="teaarDown()[pri:0, instance:org.informatica.tc.GoogleSearchTC@69b0fd6f]" name="teaarDown" is-config="true" duration-ms="863" started-at="2021-12-19T11:32:13 PST" finished-at="2021-12-19T11:32:14 PST">
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:org.informatica.tc.GoogleSearchTC@704d6e83]" name="closeTheBrowser" is-config="true" duration-ms="1644" started-at="2021-12-20T23:27:24 MSK" finished-at="2021-12-20T23:27:26 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teaarDown -->
+        </test-method> <!-- closeTheBrowser -->
       </class> <!-- org.informatica.tc.GoogleSearchTC -->
-    </test> <!-- Test -->
+    </test> <!-- TestOnYandex -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -1,6 +1,6 @@
 package org.informatica.tc;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.informatica.po.googlepo.GoogleMainPage;
 import org.informatica.po.yandexpo.YandexMainPage;
@@ -19,8 +19,9 @@ public class GoogleSearchTC {
 	
 	WebDriver driver = null;
 	
-	@Parameters({"browser", "url"})
+
 	@BeforeTest
+	@Parameters({"browser", "url"})
 	public void setUpDriver(String browser, String url) {
 		//choosing the browser
 		if (browser.equalsIgnoreCase("chrome")) {
@@ -35,33 +36,32 @@ public class GoogleSearchTC {
 		}else {
 			Assert.assertTrue(false, "No Browser Type Sent");
 		}
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
 		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		Reporter.log("Navigated to the Browser: " + browser + "URL: " + url, true);		
 	}
 	
+	@Parameters("searchText")
 	@Test
-	public void GoogleSearchImageTest() {
+	public void GoogleSearchImageTest(String searchText) {
 		String title = driver.getTitle();
 		System.out.println("Title is: " + title);
 		if (title.equalsIgnoreCase("google")) {
 			GoogleMainPage objGoogleMainPage = new GoogleMainPage(driver);
-			objGoogleMainPage.SearchAProduct("19 of May");
+			objGoogleMainPage.SearchAProduct(searchText);
 		} else if (title.equalsIgnoreCase("яндекс")) {
 			YandexMainPage objYandexMainPage = new YandexMainPage(driver);
-			objYandexMainPage.SearchAProduct("19 of May");
-		}
-		
-		/* YandexMainPage objYandexMainPage = new YandexMainPage(driver);
-		objYandexMainPage.SearchAProduct("19 of May"); */
+			objYandexMainPage.SearchAProduct(searchText);
+		}		
 		
 	}
 	
 	@AfterTest
-	public void teaarDown() {
-		driver.quit();
+	public void closeTheBrowser() {
+		driver.quit(); 
+	
 	}
 
 }
